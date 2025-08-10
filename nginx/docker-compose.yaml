@@ -1,0 +1,48 @@
+services:
+  app1:
+    build: .
+    environment:
+      - APP_NAME=App1 
+    ports:
+      - "3000"
+    networks:
+      - webnet
+  
+  app2:
+    build: .
+    environment:
+      - APP_NAME=App2 
+    ports:
+      - "3000"
+    networks:
+      - webnet 
+
+  app3:
+    build: .
+    environment:
+      - APP_NAME=App3
+    ports:
+      - "3000"
+    networks:
+      - webnet
+  
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-proxy
+    ports:
+      - "8080:80"
+      - "443:443"        # public entrypoint
+    volumes:
+      - ./proxy-server/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx-certs/nginx-selfsigned.crt:/etc/nginx/nginx-certs/nginx-selfsigned.crt:ro
+      - ./nginx-certs/nginx-selfsigned.key:/etc/nginx/nginx-certs/nginx-selfsigned.key:ro
+    depends_on:
+      - app1
+      - app2
+      - app3
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    

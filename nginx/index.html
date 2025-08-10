@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Lionel Messi — Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22d3ee; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1000px 600px at 10% 0%, #111827 0%, #0b1224 60%, #0a0f1d 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .wrap { max-width: 940px; margin: 40px auto; padding: 24px; }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px; padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      backdrop-filter: blur(6px);
+    }
+    header { display: grid; gap: 20px; grid-template-columns: 160px 1fr; align-items: center; }
+    .photo {
+      width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 16px; border: 1px solid rgba(255,255,255,0.15);
+    }
+    h1 { margin: 0; font-size: clamp(28px, 4vw, 40px); letter-spacing: 0.2px; }
+    .subtitle { margin-top: 6px; color: var(--muted); }
+    .badges { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .badge {
+      padding: 6px 10px; border-radius: 999px; font-size: 13px; color: #0b1224;
+      background: linear-gradient(135deg, var(--accent), #60a5fa);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 26px; }
+    .panel {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px; padding: 18px;
+    }
+    h2 { margin: 0 0 10px; font-size: 20px; }
+    ul { padding-left: 18px; margin: 10px 0 0; }
+    li { margin: 6px 0; }
+    .caption { text-align: center; color: var(--muted); font-size: 13px; margin-top: 6px; }
+    a { color: #7dd3fc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { margin-top: 26px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 640px) {
+      header { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <!-- Replace messi.jpg with your local image filename or path -->
+        <img class="photo" src="./images/messi.JPG" alt="Lionel Messi G.O.A.T" />
+        <div>
+          <h1>Lionel Messi</h1>
+          <div class="subtitle">Forward • Inter Miami CF &amp; Argentina</div>
+          <div class="badges">
+            <span class="badge">Ballon d’Or (multiple)</span>
+            <span class="badge">FIFA World Cup Winner</span>
+            <span class="badge">Record Goal Scorer</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="grid">
+        <section class="panel">
+          <h2>Quick Facts</h2>
+          <ul>
+            <li>Full name: Lionel Andrés Messi</li>
+            <li>Born: 24 June 1987, Rosario, Argentina</li>
+            <li>Position: Right/central forward, playmaker</li>
+            <li>Clubs: Barcelona → Paris Saint-Germain → Inter Miami CF</li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>Highlights</h2>
+          <ul>
+            <li>World Cup champion with Argentina (2022)</li>
+            <li>Multiple UEFA Champions League titles (Barcelona)</li>
+            <li>All-time top scorer for Barcelona &amp; Argentina</li>
+            <li>Renowned for dribbling, vision, and playmaking</li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>Style of Play</h2>
+          <p>
+            Messi is known for tight ball control, acceleration, and decisive passing in the final third.
+            He often drops deep to create chances, combining as a playmaker and finisher.
+          </p>
+        </section>
+      </div>
+
+      <footer>
+        <span>This is a simple static page. Update text or add sections as you like.</span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

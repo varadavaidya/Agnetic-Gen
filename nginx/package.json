@@ -1,0 +1,16 @@
+{
+    "name": "nginx-tut",
+    "version": "1.0.0",
+    "description": "A simple Nginx setup to serve static file",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "author": "Varada",    
+    "license": "IIT",   
+    "dependencies": {
+        "express": "^4.17.1",
+        "path": "^0.12.7"
+    }
+
+}
