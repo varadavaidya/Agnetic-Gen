@@ -1,0 +1,14 @@
+apiVersion: v1 
+kind: Pod 
+metadata: 
+  name: traffic-generator
+  labels:
+    app: traffic-generator 
+spec:
+  containers:
+  - name: traffic-generator 
+    image: varadavaidya/traffic-gen:1.0.0
+    args:
+        - 'color-api-clusterip/api'  #cluster IP name or IP address
+        - '0.5'
+
