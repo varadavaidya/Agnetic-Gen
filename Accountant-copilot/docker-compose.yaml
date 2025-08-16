@@ -1,0 +1,34 @@
+services:
+  api:
+    build: ./api
+    container_name: expense-api
+    ports:
+      - "9080:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/expenses_db
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_MODEL=llama3
+      - NODE_ENV=development
+    depends_on:
+      - mongo
+      - ollama
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  ollama-data:
+  mongo-data:
