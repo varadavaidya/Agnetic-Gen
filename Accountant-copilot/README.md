@@ -11,4 +11,4 @@ will help them have common data so that queries can be distributed without async
 
 HOW TO RUN?
 
-DO >>> kubectl apply -f <path to filename> 
+DO >>> kubectl apply -f <path_to_the_filename> 
